@@ -45,11 +45,6 @@ $routes->get('/project_edit', 'Project::project_edit');
 $routes->get('/project_detail', 'Project::project_detail');
 $routes->get('/dashboard', 'Project::dashboard');
 
-
-
-
-
-
 /*
  * --------------------------------------------------------------------
  * Additional Routing

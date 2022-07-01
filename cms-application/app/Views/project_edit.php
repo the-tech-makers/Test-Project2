@@ -49,10 +49,10 @@ require_once ('common/header.php');
 							<div class="form-group">
 								<label for="inputStatus">Status</label>
 								<select id="inputStatus" class="form-control custom-select" name="project_status">
-									<option disabled>Select one</option>
+									<option selected disabled>Select one</option>
 									<option value="1" <?php if($row['status'] == 1){echo "selected";}?>>On Hold</option>
 									<option value="2" <?php if($row['status'] == 2){echo "selected";}?>>Canceled</option>
-									<option value="3" <?php if($row['status'] == 3){echo "selected";}?>selected>Success</option>
+									<option value="3" <?php if($row['status'] == 3){echo "selected";}?>>Success</option>
 								</select>
 							</div>
 							<div class="form-group">
