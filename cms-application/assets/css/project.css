@@ -1,0 +1,21 @@
+ .pagination{
+    width: 30%;
+    margin: 0px auto;
+}
+
+.active{
+    padding: 5px;
+    /* background: #28a745; */
+}
+
+.num{
+    background-color: red;
+    padding: 10px;
+    border-radius: 4px;
+   
+}
+
+.num a{
+    color: white;
+}  
+
