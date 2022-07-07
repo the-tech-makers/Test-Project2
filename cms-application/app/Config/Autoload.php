@@ -60,7 +60,9 @@ class Autoload extends AutoloadConfig
      *   $classmap = [
      *       'MyClass'   => '/path/to/class/file.php'
      *   ];
-     *```
+     
+     *
+
      *
      * @var array<string, string>
      */

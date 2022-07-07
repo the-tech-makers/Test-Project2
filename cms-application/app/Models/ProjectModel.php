@@ -1,10 +1,10 @@
- <?php
+<?php
 
-/*namespace App\Models;
+namespace App\Models;
 
 use CodeIgniter\Model;
 
-class AuthModel extends Model
+class ProjectModel extends Model
 {
     protected $table = 'tbl_projects';
     // .. other member variables
@@ -17,9 +17,9 @@ class AuthModel extends Model
         // OR $this->db = db_connect();
     }
 
-    public function insert_data($data = array())
+    public function insert_data($tbl_name, $data = array())
     {
-        $this->db->table($this->table)->insert($data);
+        $this->db->table($tbl_name)->insert($data);
         return $this->db->insertID();
     }
 
@@ -51,4 +51,4 @@ class AuthModel extends Model
         $query = $this->db->query('select * from ' . $this->table);
         return $query->getResult();
     }
-} */
+}

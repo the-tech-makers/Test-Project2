@@ -19,7 +19,7 @@ require_once ('common/header_login.php');
         ?>
     </div>
 
-      <form action="main_function.php" method="post">
+      <form action="<?php echo base_url();?>/register" method="post">
         <div class="input-group mb-3">
           <input type="text" name="name" class="form-control" placeholder="Full name">
           <div class="input-group-append">

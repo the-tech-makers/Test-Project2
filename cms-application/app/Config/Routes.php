@@ -41,8 +41,13 @@ $routes->get('/login', 'Auth::login');
 $routes->post('/login', 'Auth::login_post');
 
 $routes->get('/register', 'Auth::register');
+$routes->post('/register', 'Auth::register_post');
 $routes->get('/project_add', 'Project::project_add');
+$routes->post('/project_add', 'Project::project_add_post');
+
 $routes->get('/all_project', 'Project::all_project');
+$routes->post('/all_project', 'Project::all_project_post');
+
 $routes->get('/project_edit', 'Project::project_edit');
 $routes->get('/project_detail', 'Project::project_detail');
 $routes->get('/dashboard', 'Project::dashboard');

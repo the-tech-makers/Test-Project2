@@ -94,7 +94,7 @@
                           #
                       </th>
                       <th style="width: 20%">
-                          Project Name
+                      Project Name
                       </th>
                       <th style="width: 30%">
                       Client Company
@@ -121,28 +121,28 @@
               </thead>
               <tbody>
                 <?php 
-                // while( $row = $res->fetch_assoc() ) { 
+                foreach ($result as $key => $value) {
                       
                 ?>
                   <tr>
                       <td>
-                        <?php echo $row['id']; ?>
+                        <?php echo $value->id; ?>
                       <td>
-                          <a><?php echo $row['project_name']; ?></a>
+                          <a><?php echo $value->project_name; ?></a>
                           <br/>
-                          <span class="current_time">created -<?php echo time_elapsed_string($row['added_on']); ?></span> 
+                          <span class="current_time">created -<?php echo time_elapsed_string($value->added_on); ?></span> 
                       
                           </span>
                         </td>
-                          <td><?php echo $row['client_company']; ?></td>
-                          <td><?php echo $row['project_leader']; ?></td>
-                          <td><?php echo $row['estimated_budget']; ?></td>
-                          <td><?php echo $row['total_amount']; ?></td>
-                          <td><?php echo $row['estimated_project_duration']; ?></td>
+                          <td><?php echo $value->client_company; ?></td>
+                          <td><?php echo $value->project_leader; ?></td>
+                          <td><?php echo $value->estimated_budget; ?></td>
+                          <td><?php echo $value->total_amount; ?></td>
+                          <td><?php echo $value->estimated_project_duration; ?></td>
                        <td class="project-state">
                           <!-- <span class="badge badge-success">Success</span> -->
                           <?php 
-                            $status = $row['status'];
+                            $status = $value->status;
                             if($status == 1){ ?>
                               <span class="badge badge-on-hold bg-primary ">On Hold</span>
                             <?php }else if($status == 2){ ?>
@@ -155,18 +155,18 @@
                       </td>
                     <td class="project-actions text-right">
                       <form method="post" action="main_function.php">
-                            <a class="btn btn-primary btn-sm" href="project_detail?project_id=<?php echo $row['id']; ?>"name="project_detail">
+                            <a class="btn btn-primary btn-sm" href="project_detail?project_id=<?php echo $value->id; ?>"name="project_detail">
                               <i class="fas fa-folder">
                               </i>
                               View
                             </a>
                             <!-- <form method="post" action="main_function.php"> -->
-                            <a class="btn btn-info btn-sm" href="project_edit?project_id=<?php echo $row['id']; ?>" name="project_id">
+                            <a class="btn btn-info btn-sm" href="project_edit?project_id=<?php echo $value->id; ?>" name="project_id">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
                             </a>
-                                <input type="hidden" name="project_id" value="<?php echo $row['id']; ?>">
+                                <input type="hidden" name="project_id" value="<?php echo $value->id; ?>">
                                 <button onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger btn-sm" type="submit" name="delete_project">
                                     <i class="fas fa-trash"></i>
                                     Delete
@@ -175,7 +175,7 @@
                       </form>
                     </td>
                   </tr>
-                  <?php //} ?>
+                  <?php } ?>
               </tbody>
           </table> 
           <?php

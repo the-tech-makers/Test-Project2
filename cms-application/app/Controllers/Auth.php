@@ -65,5 +65,36 @@ class Auth extends BaseController
     {
         return view('register');
     }
+
+     public function register_post(){
+
+        $table_name = 'tbl_users';
+
+        $name = $_POST['name'];
+        $user_name = $_POST['email'];
+        $status = 1;
+        $password = md5($_POST['password']);
+        $conf_password = md5($_POST['conf_password']);
+        $add_time = date('Y-m-d h:i:s');
+
+
+        if( $password !=  $conf_password ){
+                echo "Password and confirm password is not same.";
+            }else{
+
+            $where = array( 'name' => $name, 'email' => $user_name, 'password' => $password, 'status' => $status, 'added_on' => $add_time, 'modified_on' => $add_time);
+
+            $get_data = $this->AuthModel->insert_data($table_name, $where);
+            echo $get_data; die;
+            if($get_data){
+                //  return("Record inserted successfully.");
+                // echo "$gets_data";
+            }else{
+                // $this->load->view('get_data');
+                // echo "could not registered record into table:";
+                return redirect()->route('register');
+            }
+        }
+    } 
     
 }
